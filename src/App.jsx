@@ -7,6 +7,7 @@ import Stats from "./components/Stats";
 
 function App() {
   const [items, setItems] = useState([]);
+  
 
   const handleAddItems = (item) => {
     setItems(items => [...items, item] );
@@ -24,7 +25,7 @@ setItems(items =>items.filter(item => item.id !== id))
       <Logo />
       <Form onAddItems = {handleAddItems}/>
       <PackingList items = {items} onDeleteItem={handleDeleteItem} onToggleItem = {handleToggleItem}/>
-      <Stats />
+      <Stats items ={items} />
     </div>
   );
 }
